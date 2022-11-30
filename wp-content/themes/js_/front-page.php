@@ -17,10 +17,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
+		
 
 <div class="entry-content">
 		<section class="wrapper" id="hero">
@@ -161,6 +158,13 @@ get_header();
 
 		<img src="<?php echo get_template_directory_uri(); ?>/img/triangle.svg" alt="">
 
+		
+
+		<?php
+			while ( have_posts() ) :
+				the_post();
+		?>
+
 			<?php
 			// get_template_part( 'template-parts/content', 'page' );
 
@@ -171,6 +175,50 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+
+		<section class="assassins">
+			<h2>Assassins</h2>
+			<?php 
+				// WP_Query arguments
+					$args = array(
+						'post_type'              => array( 'js_assassin' ),
+						'post_status'            => array( 'publish' ),
+						'posts_per_page'         => '3',
+					);
+
+					// The Query
+					$query = new WP_Query( $args );
+
+					?><ul><?php
+
+					// The Loop
+					if ( $query->have_posts() ) {
+						while ( $query->have_posts() ) {
+							$query->the_post();
+							// do something
+							?>
+							<li>
+								<div>
+									<?php echo wp_get_attachment_image( get_field('image')['id'], 'medium' ); ?>
+								</div>
+								<h3><?php the_title(); ?></h3>
+								<?php the_content(); ?>
+							</li> 
+							<?php
+						}
+					} else {
+						// no posts found
+					}
+
+					?></ul><?php
+
+					// Restore original Post Data
+					wp_reset_postdata();
+			?>
+
+			<a href="<?php echo site_url('people') ?>" class="btn">VIEW ALL ASSASSINS</a>
+		</section>
+		
 
 	</main><!-- #main -->
 

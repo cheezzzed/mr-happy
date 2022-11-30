@@ -825,6 +825,8 @@ nav.main-navigation a {
 	display: block;
 }
 
+/* Buttons
+--------------------------------------------- */
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -909,6 +911,35 @@ nav.main-navigation a {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+body.home section.assassins ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	justify-content: space-around;
+}
+
+body.home section.assassins ul li {
+	width: 25%;
+	text-align: center;
+}
+
+body.home section.assassins ul li div {
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+	border-radius: 500px;
+	border: 10px solid #c60000;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+
+body.home section.assassins ul li div img {
+	height: 100%;
+	object-fit: cover;
 }
 
 .site {
