@@ -643,6 +643,7 @@ nav.main-navigation ul.nav-menu {
 	margin: 0;
 	padding-left: 0;
 	justify-content: flex-end;
+	align-items: baseline;
 }
 
 nav.main-navigation ul.nav-menu li.menu-item {
@@ -981,10 +982,6 @@ body.home div.assassins ul li div h3 {
 	align-content: baseline;
 }
 
-#primary {
-	padding: 100px;
-}
-
 #primary h1 {
 	color: white;
 }
@@ -1029,7 +1026,7 @@ body.home div.assassins ul li div h3 {
 
 .wrapper .inner-wrapper {
 	margin: 0 auto;
-	width: 1440px;
+	max-width: 1440px;
 }
 
 .entry-content h2 {
