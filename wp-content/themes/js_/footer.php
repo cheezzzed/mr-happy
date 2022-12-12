@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer id="colophon" class="site-header">
+	<!-- <footer id="colophon" class="site-header">
 		<div class="site-info">
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'js_' ); ?></button>
@@ -25,7 +25,7 @@
 				?>
 			</nav>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<!-- </footer>#colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

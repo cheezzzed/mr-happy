@@ -665,6 +665,45 @@ nav.main-navigation a {
 	text-decoration: none;
 }
 
+footer nav.main-navigation {
+	padding-top: 70px;
+	background-color: #020e4d;
+	display: block;
+	width: 100%;
+}
+
+footer nav.main-navigation div {
+	width: 100%;
+}
+
+footer nav.main-navigation ul.nav-menu {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	justify-content: flex-end;
+	align-items: baseline;
+}
+
+footer nav.main-navigation ul.nav-menu li.menu-item {
+	margin-right: 70px;
+}
+
+footer nav.main-navigation ul.nav-menu li.menu-item a {
+	color: white;
+}
+
+footer nav.main-navigation ul.nav-menu li.menu-item-88 {
+	background-color: #3985FF;
+	padding: 20px;
+	border-radius: 30px;
+}
+
+footer nav.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
