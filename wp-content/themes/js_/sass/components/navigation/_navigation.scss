@@ -1,4 +1,6 @@
 nav.main-navigation {
+	padding-top: 70px;
+	background-color: rgb(2,14,77);
 	display: block;
 	width: 100%;
 
@@ -15,6 +17,16 @@ nav.main-navigation {
 
 		li.menu-item{
 			margin-right: 70px;
+
+			a{
+				color: white;
+			}
+		}
+
+		li.menu-item-88{
+			background-color: #3985FF;
+			padding: 20px;
+			border-radius: 30px;
 		}
 		
 		// ul {

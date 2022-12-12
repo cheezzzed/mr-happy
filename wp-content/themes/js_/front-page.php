@@ -33,6 +33,14 @@ get_header();
 					<button class="btn">
 						<a href="" class="book-agent">book your agent</a> 
 					</button>
+					<img id="triangle" src="<?php echo get_template_directory_uri(); ?>/img/triangle.svg" alt="">
+					<img id="trianglep" src="<?php echo get_template_directory_uri(); ?>/img/trianglep.svg" alt="">
+					<img id="trianglet" src="<?php echo get_template_directory_uri(); ?>/img/trianglet.svg" alt="">
+					<img id="trianglepi" src="<?php echo get_template_directory_uri(); ?>/img/trianglepi.svg" alt="">
+					<img class="triangle" src="<?php echo get_template_directory_uri(); ?>/img/triangle.svg" alt="">
+					<img class="trianglep" src="<?php echo get_template_directory_uri(); ?>/img/trianglep.svg" alt="">
+					<img class="trianglet" src="<?php echo get_template_directory_uri(); ?>/img/trianglet.svg" alt="">
+					<img class="trianglepi" src="<?php echo get_template_directory_uri(); ?>/img/trianglepi.svg" alt="">
 				</div>
 			</div>
 		</section>
@@ -40,10 +48,10 @@ get_header();
 		<section class="wrapper" id="hate">
 			<div class="inner-wrapper">
 				<div class="hate-someone">
+					<img class="trump" src="<?php echo get_template_directory_uri(); ?>/img/trump.jpeg" alt="">
 					<div class="hate-content">
-						<img src="TODO" alt="">
 						<h2>Hate <span>Someone?</span> </h2>
-						<p>we can get rid of your headache in an instant...somewhat.</p>
+						<p>We can get rid of your headache in an instant...somewhat.</p>
 					</div>
 				</div>
 			</div>
@@ -60,27 +68,25 @@ get_header();
 					</div>
 					<div class="need-more">
 						<div class="need-more-content">
-							<img src="TODO" alt="">
+							<img class="easy" src="<?php echo get_template_directory_uri(); ?>/img/easy.png" alt="">
 							<h3>easy service</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-								Ipsa alias iusto numquam voluptatem. Autem omnis eum minima veniam, 
-								modi consequuntur illo tempora odit quia ex, fuga architecto!
+							<p>
+								The infrastructure and experience you need to pay, get rid of, and be <span>HAPPY</span> is already in
+								place.
 							</p>
 						</div>
 						<div class="need-more-content">
-							<img src="TODO" alt="">
+							<img class="rapid" src="<?php echo get_template_directory_uri(); ?>/img/rapid-deployment.png" alt="">
 							<h3>rapid deployment</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-								Ipsa alias iusto numquam voluptatem. Autem omnis eum minima veniam, 
-								modi consequuntur illo tempora odit quia ex, fuga architecto!
+							<p>
+								We'll ensure that your request is complete in a matter of <span>HOURS</span> (instead of <span>DAYS</span>) to ignite pure happiness.
 							</p>
 						</div>
 						<div class="need-more-content">
-							<img src="TODO" alt="">
+							<img class="risk" src="<?php echo get_template_directory_uri(); ?>/img/risk-free.png" alt="">
 							<h3>semi risk-free</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-								Ipsa alias iusto numquam voluptatem. Autem omnis eum minima veniam, 
-								modi consequuntur illo tempora odit quia ex, fuga architecto!
+							<p>
+								We're the happiness experts. We specialize in making you <span>HAPPY</span>. Our track record for success is based on the ratings.
 							</p>
 						</div>
 					</div>
@@ -93,9 +99,8 @@ get_header();
 				<div class="use-us">
 					<div class="use-content">
 						<h2>Why should you use us?</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-							Perspiciatis nisi quis eum totam laudantium itaque autem asperiores doloremque veniam ad 
-							illo maxime laboriosam, voluptas neque laborum. Libero id quae nihil?
+						<p>
+							We combine deep knowledge of your hatred proven research expertise to fill your <span>HAPPINESS</span> pipeline.
 						</p>
 					</div>
 					<button class="btn">
@@ -108,55 +113,98 @@ get_header();
 		<section class="wrapper" id="review">
 			<div class="inner-wrapper">
 				<div class="reviews">
-					<div class="reviews-content">
-						<img src="TODO" alt="">
-						<p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-							Hic alias iusto quidem odio fuga eaque laborum fugit quae doloremque accusantium!"
-						</p>
-						<p>-Name</p>
-					</div>
-					<div class="reviews-content">
-						<img src="TODO" alt="">
-						<p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-							Hic alias iusto quidem odio fuga eaque laborum fugit quae doloremque accusantium!"
-						</p>
-						<p>-Name</p>
-					</div>
-					<div class="reviews-content">
-						<img src="TODO" alt="">
-						<p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-							Hic alias iusto quidem odio fuga eaque laborum fugit quae doloremque accusantium!"
-						</p>
-						<p>-Name</p>
-					</div>
+				<div class="assassins">
+					<h2>Testimonial</h2>
+					<?php 
+						// WP_Query arguments
+							$args = array(
+								'post_type'              => array( 'js_testimonial' ),
+								'post_status'            => array( 'publish' ),
+								'posts_per_page'         => '3',
+							);
+
+							// The Query
+							$query = new WP_Query( $args );
+
+							?><ul><?php
+
+							// The Loop
+							if ( $query->have_posts() ) {
+								while ( $query->have_posts() ) {
+									$query->the_post();
+									// do something
+									?>
+									<li>
+										<div>
+											<?php echo wp_get_attachment_image( get_field('image')['id'], 'medium' ); ?>
+										</div>
+										<h3><?php the_title(); ?></h3>
+										<?php the_content(); ?>
+									</li> 
+									<?php
+								}
+							} else {
+								// no posts found
+							}
+
+							?></ul><?php
+
+							// Restore original Post Data
+							wp_reset_postdata();
+					?>
+
+					<a href="<?php echo site_url('testimonal') ?>" class="btn">VIEW ALL ASSASSINS</a>
+				</div>
 				</div>
 			</div>
 		</section>
 
 		<section class="wrapper" id="how">
 			<div class="inner-wrapper">
-				<div class="how-it-works">
-					<div class="how-content">
-						<h2> <span>Here's How it Works</span> </h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, necessitatibus.</p>
-						<div class="how-list">
-							<h3>Easy Service</h3>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, consectetur?</p>
-						</div>
-						<div class="how-list">
-							<h3>Rapid Deployment</h3>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, consectetur?</p>
-						</div>
-						<div class="how-list">
-							<h3>Semi Risk-Free</h3>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, consectetur?</p>
-						</div>
-					</div>
+				<div class="assassins">
+					<h2>Assassins</h2>
+					<?php 
+						// WP_Query arguments
+							$args = array(
+								'post_type'              => array( 'js_assassin' ),
+								'post_status'            => array( 'publish' ),
+								'posts_per_page'         => '3',
+							);
+
+							// The Query
+							$query = new WP_Query( $args );
+
+							?><ul><?php
+
+							// The Loop
+							if ( $query->have_posts() ) {
+								while ( $query->have_posts() ) {
+									$query->the_post();
+									// do something
+									?>
+									<li>
+										<div>
+											<?php echo wp_get_attachment_image( get_field('image')['id'], 'medium' ); ?>
+										</div>
+										<h3><?php the_title(); ?></h3>
+										<?php the_content(); ?>
+									</li> 
+									<?php
+								}
+							} else {
+								// no posts found
+							}
+
+							?></ul><?php
+
+							// Restore original Post Data
+							wp_reset_postdata();
+					?>
+
+					<a href="<?php echo site_url('people') ?>" class="btn">VIEW ALL ASSASSINS</a>
 				</div>
 			</div>
 		</section>
-
-		<img src="<?php echo get_template_directory_uri(); ?>/img/triangle.svg" alt="">
 
 		
 
@@ -175,53 +223,10 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
-		<section class="assassins">
-			<h2>Assassins</h2>
-			<?php 
-				// WP_Query arguments
-					$args = array(
-						'post_type'              => array( 'js_assassin' ),
-						'post_status'            => array( 'publish' ),
-						'posts_per_page'         => '3',
-					);
-
-					// The Query
-					$query = new WP_Query( $args );
-
-					?><ul><?php
-
-					// The Loop
-					if ( $query->have_posts() ) {
-						while ( $query->have_posts() ) {
-							$query->the_post();
-							// do something
-							?>
-							<li>
-								<div>
-									<?php echo wp_get_attachment_image( get_field('image')['id'], 'medium' ); ?>
-								</div>
-								<h3><?php the_title(); ?></h3>
-								<?php the_content(); ?>
-							</li> 
-							<?php
-						}
-					} else {
-						// no posts found
-					}
-
-					?></ul><?php
-
-					// Restore original Post Data
-					wp_reset_postdata();
-			?>
-
-			<a href="<?php echo site_url('people') ?>" class="btn">VIEW ALL ASSASSINS</a>
-		</section>
 		
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

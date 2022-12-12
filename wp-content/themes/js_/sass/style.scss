@@ -101,10 +101,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import "utilities/alignments";
 
+div#page{
+	height: 100vh;
+}
+
 // homepage
 body.home {
+	height: 100vh;
     //assasins section
-    section.assassins {
+    div.assassins {
+		padding: 70px;
+
         ul {
             display: flex;
             flex-direction: row;
@@ -120,13 +127,17 @@ body.home {
                     width: 200px;
                     height: 200px;
                     border-radius: 500px;
-                    border: 10px solid rgb(198, 0, 0);
+                    border: 10px solid white;
                     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
                     overflow: hidden;
                     img {
                         height: 100%;
                         object-fit: cover;
                     }
+
+					h3{
+						color: white;
+					}
                 }
             }
         }
@@ -135,7 +146,7 @@ body.home {
 
 
 .site{
-	background-color: white;
+	background-color: rgb(2,14,77);
 }
 
 .site-header{
@@ -144,15 +155,96 @@ body.home {
 		height: 12%;
 		display: flex;
 		justify-content: space-between;
+		align-content: baseline;
 	}
 }
+
+#primary{
+	padding: 100px;
+
+	h1{
+		color: white;
+	}
+
+	ul{
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		margin: 0;
+		padding: 0;
+		justify-content: space-around;
+
+		li.assassins{
+			width: 25%;
+			text-align: center;
+		}
+
+		a{
+			text-decoration: none;
+			color: #FA5756;
+		}
+
+		p{
+			color: white;
+		}
+
+		img{
+			margin: 0 auto;
+			width: 200px;
+			height: 200px;
+			border-radius: 500px;
+			border: 10px solid white;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+			overflow: hidden;
+			object-fit: cover;
+		}
+	}
+}
+
+// main.site-header {
+//     //testimonial section
+// 	h1{
+// 		color: white;
+// 	}
+
+	
+// 	ul {
+// 		display: flex;
+// 		flex-direction: row;
+// 		list-style: none;
+// 		margin: 0;
+// 		padding: 0;
+// 		justify-content: space-around;
+		
+// 		li.assassins {
+// 			width: 25%;
+// 			text-align: center;
+				
+// 				p{
+// 					color: white;
+// 				}
+
+// 				img {
+// 					margin: 0 auto;
+// 					width: 200px;
+// 					height: 200px;
+// 					border-radius: 500px;
+// 					border: 10px solid white;
+// 					box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+// 					overflow: hidden;
+// 					height: 100%;
+// 					object-fit: cover;
+// 				}
+// 		}
+// 	}
+// }
 
 .wrapper{
 	width: 100%;
 
 	.inner-wrapper{
 		margin: 0 auto;
-		width: 1200px;
+		width: 1440px;
 	}
 }
 
@@ -171,7 +263,7 @@ body.home {
 	}
 	
 	span{
-		color: #F7EA8E;
+		color: #3985FF;
 	}
 
 	.btn{
@@ -179,6 +271,11 @@ body.home {
 		background-color: #3985FF;
 		border: none;
 		padding: 20px;
+	}
+
+	a{
+		text-decoration: none;
+		color: white;
 	}
 
 	.book-agent{
@@ -204,15 +301,92 @@ body.home {
 		}
 	}
 
+	#triangle{
+		position: absolute;
+		right: 40px;
+		top: 300px;
+	}
+
+	#trianglep{
+		position: absolute;
+		right: 200px;
+		top: 345px;
+	}
+
+	#trianglet{
+		position: absolute;
+		right: 315px;
+		top: 480px;
+	}
+
+	#trianglepi{
+		position: absolute;
+		right: 390px;
+		top: 515px;
+	}
+
+	.triangle{
+		position: absolute;
+		right: 505px;
+		top: 590px;
+	}
+
+	.trianglep{
+		position: absolute;
+		right: 665px;
+		top: 620px;
+	}
+
+	.trianglet{
+		position: absolute;
+		right: 785px;
+		top: 730px;
+	}
+
+	.trianglepi{
+		position: absolute;
+		right: 885px;
+		top: 680px;
+	}
+
 	#hate{
+		padding-top: 200px;
 		background-color: rgb(2,14,77);
 		
+		.hate-someone{
+			text-align: right;
+			padding: 70px;
+			display: flex;
+			justify-content: flex-end;
+
+			.trianglepink{
+				position: absolute;
+				right: 507px;
+				top: 885px;
+				height: 300px;
+				width: 900px;
+			}
+			
+			.trump{
+				height: 350px;
+				width: 350px;
+				border: 10px solid white;
+				border-radius: 500px;
+				margin-right: 300px;
+				margin-top: -100px;
+			}
+			
+			.hate-content{
+
+
+				p{
+					// flex-direction: column;
+				}
+			}
+		}
 	}
 	
-	.hate-someone{
-		text-align: right;
-		padding: 70px;
-	}
+	
 
 	.need-hand,
 	.use-us{
@@ -221,7 +395,7 @@ body.home {
 	
 	.need-hand{
 		text-align: center;
-		padding: 70px;
+		padding: 40px;
 		
 		h2{
 			color: rgb(2,14,77);
@@ -243,11 +417,17 @@ body.home {
 			text-align: center;
 			padding: 40px;
 			margin: 0 10px 0 10px;
+
+			.need-more-content{
+				h3{
+					text-transform: uppercase;
+				}
+			}
 		}
 	}
 	
 	.use-us{
-		padding-bottom: 70px;
+		padding: 70px;
 		
 		.use-content{
 			h2{
@@ -281,6 +461,18 @@ body.home {
 		.reviews-content{
 			text-align: center;
 			padding: 40px;
+
+			.zen{
+				width: 200px;
+			}
+			
+			.hub{
+				width: 200px;
+			}
+
+			.patagonia{
+				width: 200px;
+			}
 		}
 	}
 
@@ -289,6 +481,7 @@ body.home {
 	}
 
 	.how-it-works{
+		padding: 70px;
 		text-align: center;
 
 		.how-list{
@@ -308,26 +501,26 @@ body.home {
 // 	background-color: black;
 // 	color: rgb(227, 0, 0);
 	
-// 	.assassins{
-// 		// display: flex;
-// 		list-style: none;
-// 		padding: 20px;
+	// .assassins{
+	// 	// display: flex;
+	// 	list-style: none;
+	// 	padding: 20px;
 		
-// 		.assassin-content{
-// 			text-decoration: none;
-// 			font-size: 20px;
-// 			font-weight: 700;
-// 			color: white;
-// 		}
+	// 	.assassin-content{
+	// 		text-decoration: none;
+	// 		font-size: 20px;
+	// 		font-weight: 700;
+	// 		color: white;
+	// 	}
 		
-// 		.assassin-content:hover{
-// 			color: red;
-// 		}
+	// 	.assassin-content:hover{
+	// 		color: red;
+	// 	}
 		
-// 		img{
-// 			height: 250px;
-// 			width: 250px;
-// 		}
-// 	}
+	// 	img{
+	// 		height: 250px;
+	// 		width: 250px;
+	// 	}
+	// }
 	
 // }
